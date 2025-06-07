@@ -13,6 +13,7 @@ const TodoProvider = ({ children }) => {
   const {
     item: todos,
     saveItem: saveTodos,
+    sincronizeItem: sincronizeTodos,
     loading,
     error,
   } = useLocalStorage("TODOS_V1", TODOS);
@@ -75,6 +76,7 @@ const TodoProvider = ({ children }) => {
         deleteTodo,
         openModal,
         setOpenModal,
+        sincronizeTodos
       }}
     >
       {children}

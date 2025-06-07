@@ -10,9 +10,10 @@ import { CreateTodoButton } from "../components/CreateTodoButton";
 import { TodoForm } from '../components/TodoForm';
 import { Modal } from "../components/Modal";
 import { TodoContext } from "../contexts/TodoContext";
+import { ChangeAlertWithStorageListener } from '../components/ChangeAlert';
 
 const AppUI = () => {
-  const { loading, error, searchedTodos, completeTodo, deleteTodo, openModal } =
+  const { loading, error, searchedTodos, completeTodo, deleteTodo, openModal, sincronizeTodos } =
     useContext(TodoContext);
 
   return (
@@ -48,6 +49,8 @@ const AppUI = () => {
           <TodoForm />
         </Modal>
       )}
+
+      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
     </>
   );
 };

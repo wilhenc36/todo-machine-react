@@ -3,7 +3,7 @@ import { TodoContext } from "../../contexts/TodoContext";
 import "./TodoSearch.css";
 
 function TodoSearch() {
-  const { searchValue, setSearchValue } = useContext(TodoContext);
+  const { searchValue, setSearchValue, loading } = useContext(TodoContext);
 
   return (
     <input
@@ -13,6 +13,7 @@ function TodoSearch() {
       onChange={(event) => {
         setSearchValue(event.target.value);
       }}
+      disabled={loading}
     />
   );
 }
