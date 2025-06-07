@@ -1,11 +1,7 @@
-import { useContext } from "react";
 import "./CreateTodoButton.css";
-import { TodoContext } from "../../contexts/TodoContext";
 import { BsPlus } from "react-icons/bs";
 
-function CreateTodoButton() {
-  const { setOpenModal } = useContext(TodoContext);
-
+function CreateTodoButton({ setOpenModal }) {
   return (
     <button
       className="CreateTodoButton"
